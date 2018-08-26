@@ -1,3 +1,5 @@
+using System;
+
 namespace CheckoutCS {
     public class CartItem {
         public Product Product { get; set; }
@@ -6,6 +8,11 @@ namespace CheckoutCS {
 
         public void Increment() {
             Quantity++;
+        }
+
+        internal void Decrement()
+        {
+            Quantity--;
         }
     }
 }

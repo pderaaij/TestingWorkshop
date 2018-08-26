@@ -9,11 +9,12 @@ namespace CheckoutCS.Tests.Helpers {
         private string description = "Lorem ipsum description of a Product";
         private decimal amount = 1.0m;
         private long version = 0;
+        private int Quantity = 1;
 
         public CartItem Build()
         {
             var cartItem =  new CartItem();
-            cartItem.Quantity = 1;
+            cartItem.Quantity = Quantity;
             cartItem.Product = new Product(id, code, description, amount, version);
 
             return cartItem;
@@ -24,6 +25,12 @@ namespace CheckoutCS.Tests.Helpers {
         internal CartItemBuilder WithId(Guid id)
         {
             this.id = id;
+            return this;
+        }
+
+        internal CartItemBuilder WithQuantity(int qty)
+        {
+            this.Quantity = qty;
             return this;
         }
     }
